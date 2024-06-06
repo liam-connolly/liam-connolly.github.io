@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
 import {
   Press_Start_2P,
   VT323,
@@ -36,10 +39,30 @@ const silkscreen = Silkscreen({
   weight: "400",
 });
 
+const fonts = [
+  vt323.className,
+  dotGothic16.className,
+  pixelifySans.className,
+  silkscreen.className,
+  pressStart2P.className,
+];
+
 const Name: React.FC = () => {
+  const [currentFontIndex, setCurrentFontIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentFontIndex < fonts.length - 1) {
+      const interval = setInterval(() => {
+        setCurrentFontIndex((prevIndex) => prevIndex + 1);
+      }, 200);
+
+      return () => clearInterval(interval);
+    }
+  }, [currentFontIndex]);
+
   return (
     <div
-      className={pressStart2P.className}
+      className={fonts[currentFontIndex]}
       style={{ fontSize: "50px", color: "white" }}
     >
       LIAM CONNOLLY
