@@ -17,6 +17,7 @@ const config: Config = {
 
     colors: {
       bone: "#F4F1EA",
+      strokesBlue: "#0b17b4",
     },
   },
   plugins: [],
