@@ -47,7 +47,11 @@ const fonts = [
   pressStart2P.className,
 ];
 
-const Name: React.FC = () => {
+interface NameProps {
+  key: number;
+}
+
+const Name: React.FC<NameProps> = ({ key }) => {
   const [currentFontIndex, setCurrentFontIndex] = useState(0);
 
   useEffect(() => {
