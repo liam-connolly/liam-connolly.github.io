@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Roboto_Mono } from "next/font/google";
+import { DotGothic16 } from "next/font/google";
 
-const robotoMono = Roboto_Mono({
+const dotGothic16 = DotGothic16({
   subsets: ["latin"],
   display: "swap",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={robotoMono.className}>{children}</body>
+      <body className={dotGothic16.className}>{children}</body>
     </html>
   );
 }
