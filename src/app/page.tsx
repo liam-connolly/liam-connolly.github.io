@@ -4,6 +4,7 @@ import Name from "./components/Name";
 import Navbar from "./components/Navbar";
 import DesktopIcon from "./components/DesktopIcon";
 import Window from "./components/Window";
+import Image from "next/image";
 
 export default function Home() {
   const [key, setKey] = useState(0);
@@ -69,7 +70,14 @@ export default function Home() {
         display={showAboutMe}
         onClose={() => setShowAboutMe(!showAboutMe)}
       >
-        <div className="bg-white">HELLO</div>
+        <div className="bg-white items-center justify-center p-24  flex-col">
+          This page is currently under construction, thank you for your
+          patience.
+          <Image
+            src={require("../assets/patrickConstruction.gif")}
+            alt="construction"
+          />
+        </div>
       </Window>
     </main>
   );
