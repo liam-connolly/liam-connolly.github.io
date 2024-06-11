@@ -3,9 +3,11 @@ import React, { useState } from "react";
 import Name from "./components/Name";
 import Navbar from "./components/Navbar";
 import DesktopIcon from "./components/DesktopIcon";
+import Window from "./components/Window";
 
 export default function Home() {
   const [key, setKey] = useState(0);
+  const [showAboutMe, setShowAboutMe] = useState(false);
 
   const handleNavButtonClick = () => {
     setKey((prevKey) => prevKey + 1);
@@ -23,9 +25,14 @@ export default function Home() {
     window.open("/Resume.pdf", "_blank");
   };
 
+  const handleAboutMeClick = () => {
+    setShowAboutMe(!showAboutMe);
+  };
+
   return (
-    <main className="flex flex-col gap-10 min-h-screen items-center justify-center p-24 bg-strokesBlue">
+    <main className="flex flex-col gap-10 min-h-screen items-center justify-center  bg-strokesBlue">
       <Navbar onButtonClick={handleNavButtonClick} />
+
       <Name key={key} />
       <div className="absolute top-1/4 left-24">
         <DesktopIcon
@@ -49,6 +56,21 @@ export default function Home() {
           onClick={handleStravaClick}
         />
       </div>
+      <div className="absolute top-3/4 left-64">
+        <DesktopIcon
+          name={"About Me"}
+          imageLink={require("../assets/aboutMe.png")}
+          onClick={handleAboutMeClick}
+        />
+      </div>
+
+      <Window
+        title="About Me"
+        display={showAboutMe}
+        onClose={() => setShowAboutMe(!showAboutMe)}
+      >
+        <div className="bg-white">HELLO</div>
+      </Window>
     </main>
   );
 }
