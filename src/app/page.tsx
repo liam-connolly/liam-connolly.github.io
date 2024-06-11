@@ -12,7 +12,7 @@ export default function Home() {
   };
 
   const handleStravaClick = () => {
-    window.open("https://www.strava.com/athletes/liamconnolly", "_blank"); // Open the link in a new tab
+    window.open("https://www.strava.com/athletes/liamconnolly", "_blank");
   };
 
   const handleEmailClick = () => {
