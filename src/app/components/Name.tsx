@@ -13,30 +13,35 @@ const pressStart2P = Press_Start_2P({
   subsets: ["latin"],
   display: "swap",
   weight: "400",
+  preload: false,
 });
 
 const vt323 = VT323({
   subsets: ["latin"],
   display: "swap",
   weight: "400",
+  preload: false,
 });
 
 const dotGothic16 = DotGothic16({
   subsets: ["latin"],
   display: "swap",
   weight: "400",
+  preload: false,
 });
 
 const pixelifySans = Pixelify_Sans({
   subsets: ["latin"],
   display: "swap",
   weight: "400",
+  preload: false,
 });
 
 const silkscreen = Silkscreen({
   subsets: ["latin"],
   display: "swap",
   weight: "400",
+  preload: false,
 });
 
 const fonts = [
@@ -51,16 +56,16 @@ interface NameProps {
   key: number;
 }
 
-const Name: React.FC<NameProps> = ({ key }) => {
+const Name: React.FC<NameProps> = () => {
   const [currentFontIndex, setCurrentFontIndex] = useState(0);
 
   useEffect(() => {
     if (currentFontIndex < fonts.length - 1) {
-      const interval = setInterval(() => {
+      const timeoutId = setTimeout(() => {
         setCurrentFontIndex((prevIndex) => prevIndex + 1);
-      }, 200);
+      }, 300);
 
-      return () => clearInterval(interval);
+      return () => clearTimeout(timeoutId);
     }
   }, [currentFontIndex]);
 

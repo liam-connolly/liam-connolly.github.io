@@ -6,6 +6,7 @@ const dotGothic16 = DotGothic16({
   subsets: ["latin"],
   display: "swap",
   weight: "400",
+  preload: true,
 });
 
 export const metadata: Metadata = {

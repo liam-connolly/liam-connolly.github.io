@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Name from "./components/Name";
 import Navbar from "./components/Navbar";
 import DesktopIcon from "./components/DesktopIcon";
@@ -10,25 +10,25 @@ export default function Home() {
   const [key, setKey] = useState(0);
   const [showAboutMe, setShowAboutMe] = useState(false);
 
-  const handleNavButtonClick = () => {
+  const handleNavButtonClick = useCallback(() => {
     setKey((prevKey) => prevKey + 1);
-  };
+  }, []);
 
-  const handleStravaClick = () => {
+  const handleStravaClick = useCallback(() => {
     window.open("https://www.strava.com/athletes/liamconnolly", "_blank");
-  };
+  }, []);
 
-  const handleEmailClick = () => {
+  const handleEmailClick = useCallback(() => {
     window.location.assign("mailto:liamconnolly.hello@gmail.com");
-  };
+  }, []);
 
-  const handleResumeClick = () => {
+  const handleResumeClick = useCallback(() => {
     window.open("/Resume.pdf", "_blank");
-  };
+  }, []);
 
-  const handleAboutMeClick = () => {
-    setShowAboutMe(!showAboutMe);
-  };
+  const handleAboutMeClick = useCallback(() => {
+    setShowAboutMe((prev) => !prev);
+  }, []);
 
   return (
     <main className="flex flex-col gap-10 min-h-screen items-center justify-center  bg-strokesBlue">
@@ -38,7 +38,7 @@ export default function Home() {
       <div className="absolute top-1/4 left-24">
         <DesktopIcon
           name={"Resume"}
-          imageLink={require("../assets/resume.png")}
+          imageLink="/resume.png"
           onClick={handleResumeClick}
         />
       </div>
@@ -46,21 +46,21 @@ export default function Home() {
       <div className="absolute bottom-1/4 right-36">
         <DesktopIcon
           name={"Email"}
-          imageLink={require("../assets/email.png")}
+          imageLink="/email.png"
           onClick={handleEmailClick}
         />
       </div>
       <div className="absolute top-1/4 right-48">
         <DesktopIcon
           name={"Strava"}
-          imageLink={require("../assets/strava.png")}
+          imageLink="/strava.png"
           onClick={handleStravaClick}
         />
       </div>
       <div className="absolute top-3/4 left-64">
         <DesktopIcon
           name={"About Me"}
-          imageLink={require("../assets/aboutMe.png")}
+          imageLink="/aboutMe.png"
           onClick={handleAboutMeClick}
         />
       </div>
@@ -68,14 +68,17 @@ export default function Home() {
       <Window
         title="About Me"
         display={showAboutMe}
-        onClose={() => setShowAboutMe(!showAboutMe)}
+        onClose={handleAboutMeClick}
       >
         <div className="bg-white items-center justify-center p-24  flex-col">
           This page is currently under construction, thank you for your
           patience.
           <Image
-            src={require("../assets/patrickConstruction.gif")}
+            src="/patrickConstruction.gif"
             alt="construction"
+            width={200}
+            height={200}
+            loading="lazy"
           />
         </div>
       </Window>

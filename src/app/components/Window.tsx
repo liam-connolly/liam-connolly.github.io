@@ -27,8 +27,9 @@ const Window: React.FC<WindowProps> = ({
             <div className="flex-grow items-center gap-2 justify-between">
               <div className="flex items-center gap-2">
                 <Image
-                  src={require("../../assets/magnifyingGlass.png")}
-                  alt={`magnifyingGlass`}
+                  src="/magnifyingGlass.png"
+                  alt="magnifyingGlass"
+                  width={28}
                   height={28}
                   className="bg-darkTeal border-2 border-t-white border-l-white border-r-black border-b-black"
                 />
@@ -40,8 +41,9 @@ const Window: React.FC<WindowProps> = ({
                 </div>
                 <button onClick={onClose}>
                   <Image
-                    src={require("../../assets/x.png")}
-                    alt={`close`}
+                    src="/x.png"
+                    alt="close"
+                    width={16}
                     height={16}
                     className=""
                   />

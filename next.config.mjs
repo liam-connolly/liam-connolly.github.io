@@ -1,4 +1,17 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import bundleAnalyzer from '@next/bundle-analyzer';
 
-export default nextConfig;
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    formats: ['image/webp', 'image/avif'],
+  },
+  experimental: {
+    optimizePackageImports: ['react-draggable'],
+  },
+};
+
+export default withBundleAnalyzer(nextConfig);
