@@ -93,8 +93,8 @@ export default function Home() {
       >
         <div className='bg-white items-center justify-center p-16  flex-col'>
           <p>
-            Hi, my name is Liam Connolly and I'm a Software Engineer based out
-            of Chicago, IL!
+            Hi, my name is Liam Connolly and I&apos;m a Software Engineer based
+            out of Chicago, IL!
           </p>
           <br />
           <p>
