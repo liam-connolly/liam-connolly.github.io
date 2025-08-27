@@ -71,8 +71,7 @@ const Name: React.FC<NameProps> = () => {
 
   return (
     <div
-      className={fonts[currentFontIndex]}
-      style={{ fontSize: "50px", color: "white", textAlign: "center" }}
+      className={`${fonts[currentFontIndex]} text-2xl md:text-5xl text-white text-center`}
     >
       LIAM CONNOLLY
     </div>
