@@ -30,7 +30,7 @@ export default function Home() {
   }, []);
 
   const handleDivvyClick = useCallback(() => {
-    window.open('https://divvy-tracking.vercel.app', '_blank');
+    window.open('https://carbomania.vercel.app', '_blank');
   }, []);
 
   const handleCameraClick = useCallback(() => {
