@@ -1,9 +1,9 @@
-'use client';
-import React, { useState, useCallback } from 'react';
-import Name from './components/Name';
-import Navbar from './components/Navbar';
-import DesktopIcon from './components/DesktopIcon';
-import Window from './components/Window';
+"use client";
+import React, { useState, useCallback } from "react";
+import Name from "./components/Name";
+import Navbar from "./components/Navbar";
+import DesktopIcon from "./components/DesktopIcon";
+import Window from "./components/Window";
 
 export default function Home() {
   const [key, setKey] = useState(0);
@@ -14,15 +14,15 @@ export default function Home() {
   }, []);
 
   const handleStravaClick = useCallback(() => {
-    window.open('https://www.strava.com/athletes/liamconnolly', '_blank');
+    window.open("https://www.strava.com/athletes/liamconnolly", "_blank");
   }, []);
 
   const handleEmailClick = useCallback(() => {
-    window.location.assign('mailto:liamconnolly.hello@gmail.com');
+    window.location.assign("mailto:liamconnolly.hello@gmail.com");
   }, []);
 
   const handleResumeClick = useCallback(() => {
-    window.open('/Resume.pdf', '_blank');
+    window.open("/LiamConnollyResume.pdf", "_blank");
   }, []);
 
   const handleAboutMeClick = useCallback(() => {
@@ -30,106 +30,106 @@ export default function Home() {
   }, []);
 
   const handleDivvyClick = useCallback(() => {
-    window.open('https://carbomania.vercel.app', '_blank');
+    window.open("https://carbomania.vercel.app", "_blank");
   }, []);
 
   const handleCameraClick = useCallback(() => {
-    window.open('https://photos.app.goo.gl/Yugk5iMvZ7pgvRta7', '_blank');
+    window.open("https://photos.app.goo.gl/Yugk5iMvZ7pgvRta7", "_blank");
   }, []);
 
   return (
-    <main className='flex flex-col gap-10 min-h-screen items-center justify-center bg-strokesBlue relative'>
+    <main className="flex flex-col gap-10 min-h-screen items-center justify-center bg-strokesBlue relative">
       <Navbar onButtonClick={handleNavButtonClick} />
 
       <Name key={key} />
-      
+
       {/* Desktop layout - hidden on mobile */}
-      <div className='hidden md:block absolute inset-0'>
-        <div className='absolute top-1/4 left-24'>
+      <div className="hidden md:block absolute inset-0">
+        <div className="absolute top-1/4 left-24">
           <DesktopIcon
-            name={'Resume'}
-            imageLink='/resume.png'
+            name={"Resume"}
+            imageLink="/resume.png"
             onClick={handleResumeClick}
           />
         </div>
 
-        <div className='absolute bottom-1/4 right-36'>
+        <div className="absolute bottom-1/4 right-36">
           <DesktopIcon
-            name={'Email'}
-            imageLink='/email.png'
+            name={"Email"}
+            imageLink="/email.png"
             onClick={handleEmailClick}
           />
         </div>
-        <div className='absolute top-1/4 right-48'>
+        <div className="absolute top-1/4 right-48">
           <DesktopIcon
-            name={'Strava'}
-            imageLink='/strava.png'
+            name={"Strava"}
+            imageLink="/strava.png"
             onClick={handleStravaClick}
           />
         </div>
-        <div className='absolute top-3/4 left-64'>
+        <div className="absolute top-3/4 left-64">
           <DesktopIcon
-            name={'About Me'}
-            imageLink='/aboutMe.png'
+            name={"About Me"}
+            imageLink="/aboutMe.png"
             onClick={handleAboutMeClick}
           />
         </div>
-        <div className='absolute top-1/2 left-12'>
+        <div className="absolute top-1/2 left-12">
           <DesktopIcon
-            name={'Latest'}
-            imageLink='/project.png'
+            name={"Latest"}
+            imageLink="/project.png"
             onClick={handleDivvyClick}
           />
         </div>
-        <div className='absolute top-36 right-1/4'>
+        <div className="absolute top-36 right-1/4">
           <DesktopIcon
-            name={'Photos'}
-            imageLink='/camera.png'
+            name={"Photos"}
+            imageLink="/camera.png"
             onClick={handleCameraClick}
           />
         </div>
       </div>
 
       {/* Mobile layout - shown only on small screens */}
-      <div className='md:hidden grid grid-cols-2 gap-8 mt-8 px-8 w-full max-w-sm'>
+      <div className="md:hidden grid grid-cols-2 gap-8 mt-8 px-8 w-full max-w-sm">
         <DesktopIcon
-          name={'Resume'}
-          imageLink='/resume.png'
+          name={"Resume"}
+          imageLink="/resume.png"
           onClick={handleResumeClick}
         />
         <DesktopIcon
-          name={'Email'}
-          imageLink='/email.png'
+          name={"Email"}
+          imageLink="/email.png"
           onClick={handleEmailClick}
         />
         <DesktopIcon
-          name={'Strava'}
-          imageLink='/strava.png'
+          name={"Strava"}
+          imageLink="/strava.png"
           onClick={handleStravaClick}
         />
         <DesktopIcon
-          name={'About Me'}
-          imageLink='/aboutMe.png'
+          name={"About Me"}
+          imageLink="/aboutMe.png"
           onClick={handleAboutMeClick}
         />
         <DesktopIcon
-          name={'Latest'}
-          imageLink='/project.png'
+          name={"Latest"}
+          imageLink="/project.png"
           onClick={handleDivvyClick}
         />
         <DesktopIcon
-          name={'Photos'}
-          imageLink='/camera.png'
+          name={"Photos"}
+          imageLink="/camera.png"
           onClick={handleCameraClick}
         />
       </div>
 
       <Window
-        title='About Me'
+        title="About Me"
         display={showAboutMe}
         onClose={handleAboutMeClick}
       >
-        <div className='bg-white items-center justify-center p-4 md:p-16 flex-col text-sm md:text-base'>
+        <div className="bg-white items-center justify-center p-4 md:p-16 flex-col text-sm md:text-base">
           <p>
             Hi, my name is Liam Connolly and I&apos;m a Software Engineer based
             out of Chicago, IL!
